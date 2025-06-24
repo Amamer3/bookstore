@@ -1,96 +1,190 @@
 
-import { Heart, Mail, MapPin, Phone } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Separator } from '@/components/ui/separator';
+import { 
+  Heart, 
+  Mail, 
+  Phone, 
+  MapPin, 
+  Facebook, 
+  Instagram, 
+  Twitter,
+  Youtube,
+  Download,
+  CreditCard,
+  Shield,
+  Truck
+} from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-custom-olive text-custom-white">
-      <div className="container mx-auto px-4 py-12">
+    <footer className="bg-gray-900 text-white">
+      {/* Main Footer */}
+      <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Brand */}
+          {/* Company Info */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <Heart className="h-6 w-6 text-custom-pink fill-current" />
-              <span className="font-serif text-xl font-semibold">
-                Mama's Printables
+            <Link to="/" className="flex items-center space-x-2">
+              <div className="w-8 h-8 bg-custom-mint rounded-full flex items-center justify-center">
+                <Heart className="h-4 w-4 text-custom-olive" />
+              </div>
+              <span className="font-serif text-xl font-bold">
+                MomLife Store
               </span>
-            </div>
-            <p className="text-sm text-custom-white/80 leading-relaxed">
-              Beautiful, functional printables designed by moms, for moms. 
-              Making motherhood more organized and joyful, one printable at a time.
+            </Link>
+            <p className="text-gray-300 text-sm leading-relaxed">
+              Empowering mothers with digital tools and resources to simplify 
+              their daily lives and create meaningful moments with their families.
             </p>
-            <div className="flex space-x-2">
-              <Button variant="ghost" size="icon" className="text-custom-white/80 hover:text-custom-white hover:bg-custom-white/10">
-                <Mail className="h-4 w-4" />
+            <div className="flex space-x-4">
+              <Button variant="ghost" size="sm" className="text-gray-300 hover:text-custom-mint">
+                <Facebook className="h-4 w-4" />
+              </Button>
+              <Button variant="ghost" size="sm" className="text-gray-300 hover:text-custom-mint">
+                <Instagram className="h-4 w-4" />
+              </Button>
+              <Button variant="ghost" size="sm" className="text-gray-300 hover:text-custom-mint">
+                <Twitter className="h-4 w-4" />
+              </Button>
+              <Button variant="ghost" size="sm" className="text-gray-300 hover:text-custom-mint">
+                <Youtube className="h-4 w-4" />
               </Button>
             </div>
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h3 className="font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2 text-sm">
-              <li><a href="#" className="text-custom-white/80 hover:text-custom-white transition-colors">Shop All</a></li>
-              <li><a href="#categories" className="text-custom-white/80 hover:text-custom-white transition-colors">Categories</a></li>
-              <li><a href="#featured" className="text-custom-white/80 hover:text-custom-white transition-colors">Featured</a></li>
-              <li><a href="#blog" className="text-custom-white/80 hover:text-custom-white transition-colors">Blog</a></li>
-              <li><a href="#" className="text-custom-white/80 hover:text-custom-white transition-colors">About Us</a></li>
-            </ul>
+          <div className="space-y-4">
+            <h3 className="font-semibold text-lg">Quick Links</h3>
+            <nav className="flex flex-col space-y-2">
+              <Link to="/" className="text-gray-300 hover:text-custom-mint transition-colors text-sm">
+                Home
+              </Link>
+              <Link to="/products" className="text-gray-300 hover:text-custom-mint transition-colors text-sm">
+                All Products
+              </Link>
+              <Link to="/blog" className="text-gray-300 hover:text-custom-mint transition-colors text-sm">
+                Blog
+              </Link>
+              <Link to="/about" className="text-gray-300 hover:text-custom-mint transition-colors text-sm">
+                About Us
+              </Link>
+              <Link to="/contact" className="text-gray-300 hover:text-custom-mint transition-colors text-sm">
+                Contact
+              </Link>
+            </nav>
           </div>
 
           {/* Categories */}
-          <div>
-            <h3 className="font-semibold mb-4">Categories</h3>
-            <ul className="space-y-2 text-sm">
-              <li><a href="#" className="text-custom-white/80 hover:text-custom-white transition-colors">For Kids</a></li>
-              <li><a href="#" className="text-custom-white/80 hover:text-custom-white transition-colors">For Moms</a></li>
-              <li><a href="#" className="text-custom-white/80 hover:text-custom-white transition-colors">Planners</a></li>
-              <li><a href="#" className="text-custom-white/80 hover:text-custom-white transition-colors">Educational</a></li>
-              <li><a href="#" className="text-custom-white/80 hover:text-custom-white transition-colors">Home Management</a></li>
-            </ul>
+          <div className="space-y-4">
+            <h3 className="font-semibold text-lg">Categories</h3>
+            <nav className="flex flex-col space-y-2">
+              <Link to="/category/planners" className="text-gray-300 hover:text-custom-mint transition-colors text-sm">
+                Daily Planners
+              </Link>
+              <Link to="/category/activities" className="text-gray-300 hover:text-custom-mint transition-colors text-sm">
+                Kids Activities
+              </Link>
+              <Link to="/category/organization" className="text-gray-300 hover:text-custom-mint transition-colors text-sm">
+                Organization Tools
+              </Link>
+              <Link to="/category/self-care" className="text-gray-300 hover:text-custom-mint transition-colors text-sm">
+                Self-Care Resources
+              </Link>
+              <Link to="/category/baby" className="text-gray-300 hover:text-custom-mint transition-colors text-sm">
+                Baby & Pregnancy
+              </Link>
+            </nav>
           </div>
 
-          {/* Support */}
-          <div>
-            <h3 className="font-semibold mb-4">Support</h3>
-            <ul className="space-y-2 text-sm">
-              <li><a href="#" className="text-custom-white/80 hover:text-custom-white transition-colors">Help Center</a></li>
-              <li><a href="#" className="text-custom-white/80 hover:text-custom-white transition-colors">Contact Us</a></li>
-              <li><a href="#" className="text-custom-white/80 hover:text-custom-white transition-colors">My Account</a></li>
-              <li><a href="#" className="text-custom-white/80 hover:text-custom-white transition-colors">Download Issues</a></li>
-              <li><a href="#" className="text-custom-white/80 hover:text-custom-white transition-colors">Refund Policy</a></li>
-            </ul>
-            
-            <div className="mt-6 space-y-2">
-              <div className="flex items-center space-x-2 text-sm text-custom-white/80">
-                <Mail className="h-4 w-4" />
-                <span>support@mamasprintables.com</span>
+          {/* Contact & Support */}
+          <div className="space-y-4">
+            <h3 className="font-semibold text-lg">Support</h3>
+            <div className="space-y-3">
+              <div className="flex items-center space-x-2">
+                <Mail className="h-4 w-4 text-custom-mint" />
+                <span className="text-gray-300 text-sm">support@momlifestore.com</span>
               </div>
-              <div className="flex items-center space-x-2 text-sm text-custom-white/80">
-                <Phone className="h-4 w-4" />
-                <span>Available 24/7</span>
+              <div className="flex items-center space-x-2">
+                <Phone className="h-4 w-4 text-custom-mint" />
+                <span className="text-gray-300 text-sm">+233 (0) 123 456 789</span>
               </div>
+              <div className="flex items-center space-x-2">
+                <MapPin className="h-4 w-4 text-custom-mint" />
+                <span className="text-gray-300 text-sm">Accra, Ghana</span>
+              </div>
+            </div>
+            <nav className="flex flex-col space-y-2 pt-2">
+              <Link to="/help" className="text-gray-300 hover:text-custom-mint transition-colors text-sm">
+                Help Center
+              </Link>
+              <Link to="/returns" className="text-gray-300 hover:text-custom-mint transition-colors text-sm">
+                Returns & Refunds
+              </Link>
+              <Link to="/privacy" className="text-gray-300 hover:text-custom-mint transition-colors text-sm">
+                Privacy Policy
+              </Link>
+              <Link to="/terms" className="text-gray-300 hover:text-custom-mint transition-colors text-sm">
+                Terms of Service
+              </Link>
+            </nav>
+          </div>
+        </div>
+      </div>
+
+      <Separator className="bg-gray-700" />
+
+      {/* Trust Indicators */}
+      <div className="container mx-auto px-4 py-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+          <div className="flex items-center justify-center space-x-3">
+            <Download className="h-6 w-6 text-custom-mint" />
+            <div>
+              <div className="font-semibold text-sm">Instant Download</div>
+              <div className="text-xs text-gray-400">Get your products immediately</div>
+            </div>
+          </div>
+          <div className="flex items-center justify-center space-x-3">
+            <Shield className="h-6 w-6 text-custom-mint" />
+            <div>
+              <div className="font-semibold text-sm">Secure Payment</div>
+              <div className="text-xs text-gray-400">Your data is protected</div>
+            </div>
+          </div>
+          <div className="flex items-center justify-center space-x-3">
+            <Heart className="h-6 w-6 text-custom-mint" />
+            <div>
+              <div className="font-semibold text-sm">30-Day Guarantee</div>
+              <div className="text-xs text-gray-400">Love it or get your money back</div>
             </div>
           </div>
         </div>
+      </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-custom-white/20 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-sm text-custom-white/80">
-            © {currentYear} Mama's Printables. All rights reserved.
-          </p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="text-sm text-custom-white/80 hover:text-custom-white transition-colors">
-              Privacy Policy
-            </a>
-            <a href="#" className="text-sm text-custom-white/80 hover:text-custom-white transition-colors">
-              Terms of Service
-            </a>
-            <a href="#" className="text-sm text-custom-white/80 hover:text-custom-white transition-colors">
-              Cookies
-            </a>
+      <Separator className="bg-gray-700" />
+
+      {/* Bottom Footer */}
+      <div className="container mx-auto px-4 py-6">
+        <div className="flex flex-col md:flex-row justify-between items-center">
+          <div className="text-gray-400 text-sm">
+            © {currentYear} MomLife Store. All rights reserved. Made with ❤️ for amazing moms.
+          </div>
+          <div className="flex items-center space-x-4 mt-4 md:mt-0">
+            <span className="text-gray-400 text-sm">We accept:</span>
+            <div className="flex space-x-2">
+              <div className="w-8 h-5 bg-blue-600 rounded text-xs flex items-center justify-center text-white font-bold">
+                VISA
+              </div>
+              <div className="w-8 h-5 bg-red-600 rounded text-xs flex items-center justify-center text-white font-bold">
+                MC
+              </div>
+              <div className="w-8 h-5 bg-gray-700 rounded text-xs flex items-center justify-center text-white">
+                <CreditCard className="h-3 w-3" />
+              </div>
+            </div>
           </div>
         </div>
       </div>

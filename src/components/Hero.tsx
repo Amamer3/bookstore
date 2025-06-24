@@ -1,72 +1,95 @@
 
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Download, Heart, Star } from 'lucide-react';
+import { ArrowRight, Star, Users, Download } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section className="relative bg-gradient-to-br from-background via-secondary to-accent py-16 md:py-24">
+    <section className="bg-gradient-to-br from-custom-mint via-custom-orange to-custom-pink-light py-20">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Badge */}
-          <div className="inline-flex items-center space-x-2 bg-custom-white/80 backdrop-blur-sm rounded-full px-4 py-2 mb-6 animate-fade-in">
-            <Star className="h-4 w-4 text-custom-pink fill-current" />
-            <span className="text-sm font-medium">Trusted by 10,000+ moms</span>
-          </div>
-
-          {/* Main heading */}
-          <h1 className="font-serif text-4xl md:text-6xl font-bold text-foreground mb-6 animate-fade-in">
-            Beautiful Printables for
-            <span className="text-gradient block">Modern Moms</span>
-          </h1>
-
-          {/* Subtitle */}
-          <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed animate-fade-in">
-            Discover thoughtfully designed planners, activity books, educational materials, and journals that make motherhood more organized and joyful.
-          </p>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-fade-in">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-8 py-3 text-base">
-              Shop Now
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-            <Button variant="outline" size="lg" className="px-8 py-3 text-base">
-              Browse Categories
-            </Button>
-          </div>
-
-          {/* Features */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto animate-fade-in">
-            <div className="flex flex-col items-center text-center space-y-2">
-              <div className="w-12 h-12 bg-custom-blue rounded-full flex items-center justify-center">
-                <Download className="h-6 w-6 text-custom-olive" />
-              </div>
-              <h3 className="font-semibold">Instant Download</h3>
-              <p className="text-sm text-muted-foreground">Get your printables immediately after purchase</p>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Left Content */}
+          <div className="space-y-8">
+            <div className="space-y-4">
+              <h1 className="font-serif text-4xl md:text-6xl font-bold text-foreground leading-tight">
+                Simplify Your
+                <span className="text-custom-olive block">Mom Life</span>
+              </h1>
+              <p className="text-lg text-muted-foreground max-w-lg">
+                Digital planners, activity books, and organizational tools designed 
+                specifically for busy mothers who want to stay organized and create 
+                meaningful moments with their families.
+              </p>
             </div>
 
-            <div className="flex flex-col items-center text-center space-y-2">
-              <div className="w-12 h-12 bg-custom-pink-light rounded-full flex items-center justify-center">
-                <Heart className="h-6 w-6 text-custom-pink" />
+            {/* Stats */}
+            <div className="flex items-center space-x-8">
+              <div className="flex items-center space-x-2">
+                <div className="flex">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <Star key={star} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+                <span className="text-sm font-medium">4.9/5 (2,341 reviews)</span>
               </div>
-              <h3 className="font-semibold">Made with Love</h3>
-              <p className="text-sm text-muted-foreground">Designed by moms, for moms with care and attention</p>
+              <div className="flex items-center space-x-2">
+                <Users className="h-5 w-5 text-custom-olive" />
+                <span className="text-sm font-medium">10,000+ Happy Moms</span>
+              </div>
             </div>
 
-            <div className="flex flex-col items-center text-center space-y-2">
-              <div className="w-12 h-12 bg-custom-green-light rounded-full flex items-center justify-center">
-                <Star className="h-6 w-6 text-custom-green" />
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button size="lg" className="bg-custom-olive hover:bg-custom-olive/90 text-white">
+                Shop Now
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+              <Button size="lg" variant="outline">
+                <Download className="mr-2 h-4 w-4" />
+                Free Sample
+              </Button>
+            </div>
+
+            {/* Trust Indicators */}
+            <div className="flex items-center space-x-6 text-sm text-muted-foreground">
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                <span>Instant Download</span>
               </div>
-              <h3 className="font-semibold">Premium Quality</h3>
-              <p className="text-sm text-muted-foreground">High-resolution, print-ready designs</p>
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                <span>Lifetime Access</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                <span>30-Day Guarantee</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Content - Image/Visual */}
+          <div className="relative">
+            <div className="bg-white rounded-lg shadow-2xl p-8 transform rotate-3">
+              <div className="space-y-4">
+                <div className="h-4 bg-custom-mint rounded w-3/4"></div>
+                <div className="h-4 bg-custom-orange rounded w-1/2"></div>
+                <div className="h-4 bg-custom-pink-light rounded w-2/3"></div>
+                <div className="space-y-2 pt-4">
+                  <div className="h-8 bg-gray-100 rounded"></div>
+                  <div className="h-8 bg-gray-100 rounded"></div>
+                  <div className="h-8 bg-gray-100 rounded"></div>
+                </div>
+              </div>
+            </div>
+            <div className="absolute -bottom-4 -left-4 bg-custom-olive text-white p-4 rounded-lg shadow-lg">
+              <div className="text-center">
+                <div className="text-2xl font-bold">GH₵ 25</div>
+                <div className="text-sm opacity-90">Starting from</div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-
-      {/* Decorative elements */}
-      <div className="absolute top-10 left-10 w-20 h-20 bg-custom-mint rounded-full blur-xl opacity-50"></div>
-      <div className="absolute bottom-10 right-10 w-32 h-32 bg-custom-orange rounded-full blur-xl opacity-50"></div>
     </section>
   );
 };

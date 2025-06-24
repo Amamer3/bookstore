@@ -23,7 +23,7 @@ const Cart = () => {
     {
       id: '1',
       title: 'Daily Planner for Busy Moms',
-      price: 12.99,
+      price: 45.50,
       quantity: 1,
       image: '/placeholder.svg',
       category: 'Planners'
@@ -31,7 +31,7 @@ const Cart = () => {
     {
       id: '2',
       title: 'Kids Learning Activity Book',
-      price: 8.99,
+      price: 25.99,
       quantity: 2,
       image: '/placeholder.svg',
       category: 'Activity Books'
@@ -62,7 +62,7 @@ const Cart = () => {
   };
 
   const subtotal = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-  const tax = subtotal * 0.08; // 8% tax
+  const tax = subtotal * 0.125; // 12.5% VAT in Ghana
   const total = subtotal + tax;
 
   const handleCheckout = () => {
@@ -125,7 +125,7 @@ const Cart = () => {
                       <h3 className="font-semibold text-lg">{item.title}</h3>
                       <p className="text-sm text-muted-foreground">{item.category}</p>
                       <p className="text-lg font-bold text-primary mt-1">
-                        ${item.price.toFixed(2)}
+                        GH₵ {item.price.toFixed(2)}
                       </p>
                     </div>
                     
@@ -170,16 +170,16 @@ const Cart = () => {
               <CardContent className="space-y-4">
                 <div className="flex justify-between">
                   <span>Subtotal</span>
-                  <span>${subtotal.toFixed(2)}</span>
+                  <span>GH₵ {subtotal.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span>Tax</span>
-                  <span>${tax.toFixed(2)}</span>
+                  <span>VAT (12.5%)</span>
+                  <span>GH₵ {tax.toFixed(2)}</span>
                 </div>
                 <Separator />
                 <div className="flex justify-between font-bold text-lg">
                   <span>Total</span>
-                  <span>${total.toFixed(2)}</span>
+                  <span>GH₵ {total.toFixed(2)}</span>
                 </div>
                 
                 <div className="space-y-2">
@@ -202,6 +202,7 @@ const Cart = () => {
                 
                 <div className="text-center text-sm text-muted-foreground">
                   <p>Secure checkout with instant download</p>
+                  <p className="mt-1">All prices in Ghana Cedis (GH₵)</p>
                 </div>
               </CardContent>
             </Card>

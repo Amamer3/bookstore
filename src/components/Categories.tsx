@@ -1,109 +1,127 @@
 
-import { Card } from '@/components/ui/card';
-import { BookOpen, Calendar, GraduationCap, Heart, Home, PenTool } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
+import { 
+  Calendar, 
+  BookOpen, 
+  Users, 
+  Heart, 
+  Coffee, 
+  Baby,
+  ArrowRight 
+} from 'lucide-react';
 
 const Categories = () => {
   const categories = [
     {
-      id: 'kids',
-      name: 'For Kids',
-      description: 'Activity books, coloring pages, learning materials',
-      icon: BookOpen,
-      color: 'bg-custom-pink-light text-custom-pink',
-      count: '25+ items'
-    },
-    {
-      id: 'moms',
-      name: 'For Moms',
-      description: 'Self-care journals, mindfulness guides, wellness trackers',
-      icon: Heart,
-      color: 'bg-custom-green-light text-custom-green',
-      count: '18+ items'
-    },
-    {
       id: 'planners',
-      name: 'Planners',
-      description: 'Daily, weekly, monthly planners and organizers',
+      title: 'Daily Planners',
+      description: 'Organize your busy mom life with our beautiful digital planners',
       icon: Calendar,
-      color: 'bg-custom-blue text-custom-olive',
-      count: '32+ items'
+      color: 'bg-custom-mint',
+      itemCount: 12,
+      startingPrice: 35
     },
     {
-      id: 'educational',
-      name: 'Educational',
-      description: 'Learning worksheets, educational games, study guides',
-      icon: GraduationCap,
-      color: 'bg-custom-mint text-custom-olive',
-      count: '28+ items'
+      id: 'activities',
+      title: 'Kids Activities',
+      description: 'Engaging printable activities to keep your little ones busy',
+      icon: BookOpen,
+      color: 'bg-custom-orange',
+      itemCount: 25,
+      startingPrice: 15
     },
     {
-      id: 'home',
-      name: 'Home Management',
-      description: 'Cleaning schedules, meal planners, budget trackers',
-      icon: Home,
-      color: 'bg-custom-orange text-custom-olive',
-      count: '22+ items'
+      id: 'family',
+      title: 'Family Organization',
+      description: 'Tools to keep your whole family organized and connected',
+      icon: Users,
+      color: 'bg-custom-pink-light',
+      itemCount: 8,
+      startingPrice: 20
     },
     {
-      id: 'journals',
-      name: 'Journals',
-      description: 'Motherhood journals, gratitude logs, reflection guides',
-      icon: PenTool,
-      color: 'bg-custom-mint text-custom-green',
-      count: '15+ items'
+      id: 'selfcare',
+      title: 'Self-Care',
+      description: 'Take care of yourself with our wellness and self-care resources',
+      icon: Heart,
+      color: 'bg-purple-100',
+      itemCount: 15,
+      startingPrice: 25
+    },
+    {
+      id: 'morning',
+      title: 'Morning Routines',
+      description: 'Start your day right with structured morning routine guides',
+      icon: Coffee,
+      color: 'bg-yellow-100',
+      itemCount: 6,
+      startingPrice: 18
+    },
+    {
+      id: 'baby',
+      title: 'Baby Care',
+      description: 'Track and organize everything for your little bundle of joy',
+      icon: Baby,
+      color: 'bg-pink-100',
+      itemCount: 10,
+      startingPrice: 22
     }
   ];
 
   return (
-    <section id="categories" className="py-16 md:py-24 bg-custom-white">
+    <section className="py-16 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">
             Shop by Category
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Find exactly what you need with our thoughtfully organized collections designed for every aspect of motherhood.
+            Find exactly what you need to simplify and organize your mom life
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {categories.map((category, index) => {
+          {categories.map((category) => {
             const IconComponent = category.icon;
             return (
-              <Card 
-                key={category.id}
-                className="group cursor-pointer border-border hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-fade-in"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <div className="p-6">
-                  <div className="flex items-start space-x-4">
-                    <div className={`w-12 h-12 rounded-lg ${category.color} flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
-                      <IconComponent className="h-6 w-6" />
+              <Card key={category.id} className="hover:shadow-lg transition-shadow group">
+                <CardHeader>
+                  <div className="flex items-center justify-between mb-4">
+                    <div className={`w-12 h-12 ${category.color} rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform`}>
+                      <IconComponent className="h-6 w-6 text-gray-700" />
                     </div>
-                    <div className="flex-1">
-                      <div className="flex items-center justify-between mb-2">
-                        <h3 className="font-semibold text-lg text-foreground group-hover:text-primary transition-colors">
-                          {category.name}
-                        </h3>
-                        <span className="text-xs text-muted-foreground bg-muted px-2 py-1 rounded">
-                          {category.count}
-                        </span>
-                      </div>
-                      <p className="text-muted-foreground text-sm leading-relaxed">
-                        {category.description}
-                      </p>
-                    </div>
+                    <Badge variant="secondary">{category.itemCount} items</Badge>
                   </div>
-                </div>
+                  <CardTitle className="text-xl">{category.title}</CardTitle>
+                  <CardDescription>{category.description}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex items-center justify-between">
+                    <div className="text-sm text-muted-foreground">
+                      Starting from{' '}
+                      <span className="font-semibold text-custom-olive">
+                        GH₵ {category.startingPrice}
+                      </span>
+                    </div>
+                    <Button variant="ghost" size="sm" className="group-hover:bg-custom-mint">
+                      Browse
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </div>
+                </CardContent>
               </Card>
             );
           })}
         </div>
 
         <div className="text-center mt-12">
-          <button className="text-primary font-medium hover:text-primary/80 transition-colors">
-            View All Categories →
-          </button>
+          <Button size="lg" variant="outline">
+            View All Categories
+            <ArrowRight className="ml-2 h-4 w-4" />
+          </Button>
         </div>
       </div>
     </section>
