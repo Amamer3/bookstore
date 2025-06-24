@@ -21,10 +21,10 @@ const Newsletter = () => {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-br from-primary/5 via-secondary to-accent/20">
+    <section className="py-16 md:py-24 bg-gradient-to-br from-custom-mint via-custom-orange to-custom-pink-light">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-6">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-custom-white rounded-full mb-6">
             <Mail className="h-8 w-8 text-primary" />
           </div>
           
@@ -43,7 +43,7 @@ const Newsletter = () => {
               placeholder="Enter your email address"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="flex-1 bg-white border-primary/20 focus:border-primary"
+              className="flex-1 bg-custom-white border-primary/20 focus:border-primary"
               required
             />
             <Button type="submit" className="bg-primary hover:bg-primary/90 text-white px-8">

@@ -9,7 +9,7 @@ const Categories = () => {
       name: 'For Kids',
       description: 'Activity books, coloring pages, learning materials',
       icon: BookOpen,
-      color: 'bg-pink-100 text-pink-600',
+      color: 'bg-custom-pink-light text-custom-pink',
       count: '25+ items'
     },
     {
@@ -17,7 +17,7 @@ const Categories = () => {
       name: 'For Moms',
       description: 'Self-care journals, mindfulness guides, wellness trackers',
       icon: Heart,
-      color: 'bg-purple-100 text-purple-600',
+      color: 'bg-custom-green-light text-custom-green',
       count: '18+ items'
     },
     {
@@ -25,7 +25,7 @@ const Categories = () => {
       name: 'Planners',
       description: 'Daily, weekly, monthly planners and organizers',
       icon: Calendar,
-      color: 'bg-blue-100 text-blue-600',
+      color: 'bg-custom-blue text-custom-olive',
       count: '32+ items'
     },
     {
@@ -33,7 +33,7 @@ const Categories = () => {
       name: 'Educational',
       description: 'Learning worksheets, educational games, study guides',
       icon: GraduationCap,
-      color: 'bg-green-100 text-green-600',
+      color: 'bg-custom-mint text-custom-olive',
       count: '28+ items'
     },
     {
@@ -41,7 +41,7 @@ const Categories = () => {
       name: 'Home Management',
       description: 'Cleaning schedules, meal planners, budget trackers',
       icon: Home,
-      color: 'bg-orange-100 text-orange-600',
+      color: 'bg-custom-orange text-custom-olive',
       count: '22+ items'
     },
     {
@@ -49,13 +49,13 @@ const Categories = () => {
       name: 'Journals',
       description: 'Motherhood journals, gratitude logs, reflection guides',
       icon: PenTool,
-      color: 'bg-teal-100 text-teal-600',
+      color: 'bg-custom-mint text-custom-green',
       count: '15+ items'
     }
   ];
 
   return (
-    <section id="categories" className="py-16 md:py-24 bg-white">
+    <section id="categories" className="py-16 md:py-24 bg-custom-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">

@@ -7,65 +7,65 @@
 
 @layer base {
   :root {
-    --background: 253 250 247;
-    --foreground: 51 44 40;
+    --background: 255 255 255;
+    --foreground: 147 133 57;
 
     --card: 255 255 255;
-    --card-foreground: 51 44 40;
+    --card-foreground: 147 133 57;
 
     --popover: 255 255 255;
-    --popover-foreground: 51 44 40;
+    --popover-foreground: 147 133 57;
 
-    --primary: 219 168 155;
+    --primary: 251 58 162;
     --primary-foreground: 255 255 255;
 
-    --secondary: 248 241 237;
-    --secondary-foreground: 51 44 40;
+    --secondary: 252 231 243;
+    --secondary-foreground: 147 133 57;
 
-    --muted: 248 241 237;
-    --muted-foreground: 115 101 95;
+    --muted: 255 237 213;
+    --muted-foreground: 147 133 57;
 
-    --accent: 236 213 204;
-    --accent-foreground: 51 44 40;
+    --accent: 204 251 241;
+    --accent-foreground: 147 133 57;
 
     --destructive: 239 68 68;
     --destructive-foreground: 255 255 255;
 
-    --border: 236 213 204;
-    --input: 236 213 204;
-    --ring: 219 168 155;
+    --border: 252 231 243;
+    --input: 252 231 243;
+    --ring: 251 58 162;
 
     --radius: 0.75rem;
   }
 
   .dark {
-    --background: 51 44 40;
-    --foreground: 253 250 247;
+    --background: 147 133 57;
+    --foreground: 255 255 255;
 
-    --card: 68 58 52;
-    --card-foreground: 253 250 247;
+    --card: 147 133 57;
+    --card-foreground: 255 255 255;
 
-    --popover: 68 58 52;
-    --popover-foreground: 253 250 247;
+    --popover: 147 133 57;
+    --popover-foreground: 255 255 255;
 
-    --primary: 219 168 155;
-    --primary-foreground: 51 44 40;
+    --primary: 251 58 162;
+    --primary-foreground: 255 255 255;
 
-    --secondary: 68 58 52;
-    --secondary-foreground: 253 250 247;
+    --secondary: 147 133 57;
+    --secondary-foreground: 255 255 255;
 
-    --muted: 68 58 52;
-    --muted-foreground: 160 146 140;
+    --muted: 147 133 57;
+    --muted-foreground: 204 251 241;
 
-    --accent: 68 58 52;
-    --accent-foreground: 253 250 247;
+    --accent: 147 133 57;
+    --accent-foreground: 255 255 255;
 
     --destructive: 185 28 28;
-    --destructive-foreground: 253 250 247;
+    --destructive-foreground: 255 255 255;
 
-    --border: 68 58 52;
-    --input: 68 58 52;
-    --ring: 219 168 155;
+    --border: 147 133 57;
+    --input: 147 133 57;
+    --ring: 251 58 162;
   }
 }
 
@@ -86,7 +86,7 @@
 
 @layer utilities {
   .text-gradient {
-    background: linear-gradient(135deg, #db a89b, #f4a089);
+    background: linear-gradient(135deg, #FB3AA2, #FCE7F3);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

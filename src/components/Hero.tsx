@@ -8,8 +8,8 @@ const Hero = () => {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
-          <div className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm rounded-full px-4 py-2 mb-6 animate-fade-in">
-            <Star className="h-4 w-4 text-yellow-400 fill-current" />
+          <div className="inline-flex items-center space-x-2 bg-custom-white/80 backdrop-blur-sm rounded-full px-4 py-2 mb-6 animate-fade-in">
+            <Star className="h-4 w-4 text-custom-pink fill-current" />
             <span className="text-sm font-medium">Trusted by 10,000+ moms</span>
           </div>
 
@@ -38,24 +38,24 @@ const Hero = () => {
           {/* Features */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto animate-fade-in">
             <div className="flex flex-col items-center text-center space-y-2">
-              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                <Download className="h-6 w-6 text-primary" />
+              <div className="w-12 h-12 bg-custom-blue rounded-full flex items-center justify-center">
+                <Download className="h-6 w-6 text-custom-olive" />
               </div>
               <h3 className="font-semibold">Instant Download</h3>
               <p className="text-sm text-muted-foreground">Get your printables immediately after purchase</p>
             </div>
 
             <div className="flex flex-col items-center text-center space-y-2">
-              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                <Heart className="h-6 w-6 text-primary" />
+              <div className="w-12 h-12 bg-custom-pink-light rounded-full flex items-center justify-center">
+                <Heart className="h-6 w-6 text-custom-pink" />
               </div>
               <h3 className="font-semibold">Made with Love</h3>
               <p className="text-sm text-muted-foreground">Designed by moms, for moms with care and attention</p>
             </div>
 
             <div className="flex flex-col items-center text-center space-y-2">
-              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
-                <Star className="h-6 w-6 text-primary" />
+              <div className="w-12 h-12 bg-custom-green-light rounded-full flex items-center justify-center">
+                <Star className="h-6 w-6 text-custom-green" />
               </div>
               <h3 className="font-semibold">Premium Quality</h3>
               <p className="text-sm text-muted-foreground">High-resolution, print-ready designs</p>
@@ -65,8 +65,8 @@ const Hero = () => {
       </div>
 
       {/* Decorative elements */}
-      <div className="absolute top-10 left-10 w-20 h-20 bg-primary/5 rounded-full blur-xl"></div>
-      <div className="absolute bottom-10 right-10 w-32 h-32 bg-primary/5 rounded-full blur-xl"></div>
+      <div className="absolute top-10 left-10 w-20 h-20 bg-custom-mint rounded-full blur-xl opacity-50"></div>
+      <div className="absolute bottom-10 right-10 w-32 h-32 bg-custom-orange rounded-full blur-xl opacity-50"></div>
     </section>
   );
 };
