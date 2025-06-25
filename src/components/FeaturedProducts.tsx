@@ -123,16 +123,16 @@ const FeaturedProducts = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 lg:gap-16">
           {products.map((product) => (
-            <Card key={product.id} className="group hover:shadow-xl transition-shadow relative">
+            <Card key={product.id} className="group hover:shadow-xl transition-shadow relative bg-white">
               {/* Product Badges */}
               <div className="absolute top-4 left-4 z-10 flex flex-col gap-2">
                 {product.bestseller && (
                   <Badge className="bg-custom-olive text-white">Bestseller</Badge>
                 )}
                 {product.new && (
-                  <Badge className="bg-custom-orange text-white">New</Badge>
+                  <Badge className="bg-blue-500 text-white">New</Badge>
                 )}
                 {product.originalPrice && (
                   <Badge variant="destructive">
@@ -159,7 +159,7 @@ const FeaturedProducts = () => {
 
               {/* Product Image */}
               <div className="aspect-square bg-custom-mint rounded-t-lg relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-custom-mint to-custom-orange opacity-50"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-custom-mint to-gray-100 opacity-50"></div>
                 <div className="absolute inset-0 flex items-center justify-center">
                   <Download className="h-12 w-12 text-custom-olive" />
                 </div>
@@ -169,7 +169,7 @@ const FeaturedProducts = () => {
                 <div className="flex items-center justify-between mb-2">
                   <Badge variant="secondary">{product.category}</Badge>
                   <div className="flex items-center">
-                    <Star className="h-4 w-4 fill-yellow-400 text-yellow-400 mr-1" />
+                    <Star className="h-4 w-4 fill-pink-400 text-pink-400 mr-1" />
                     <span className="text-sm font-medium">{product.rating}</span>
                     <span className="text-sm text-muted-foreground ml-1">
                       ({product.reviewCount})
@@ -216,7 +216,7 @@ const FeaturedProducts = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Button size="lg" variant="outline">
+          <Button size="lg" variant="default">
             View All Products
           </Button>
         </div>

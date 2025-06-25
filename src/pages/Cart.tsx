@@ -74,7 +74,7 @@ const Cart = () => {
 
   if (cartItems.length === 0) {
     return (
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen bg-white">
         <div className="container mx-auto px-4 py-16">
           <div className="max-w-2xl mx-auto text-center">
             <div className="w-24 h-24 bg-custom-mint rounded-full flex items-center justify-center mx-auto mb-6">
@@ -98,7 +98,7 @@ const Cart = () => {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-white">
       <div className="container mx-auto px-4 py-8">
         <div className="flex items-center mb-8">
           <Link to="/" className="mr-4">

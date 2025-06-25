@@ -5,7 +5,7 @@ import { ArrowRight, Star, Users, Download } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section className="bg-gradient-to-br from-custom-mint via-custom-orange to-custom-pink-light py-20">
+    <section className="bg-gradient-to-br from-custom-mint via-gray-100 to-custom-pink-light py-20">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
@@ -27,7 +27,7 @@ const Hero = () => {
               <div className="flex items-center space-x-2">
                 <div className="flex">
                   {[1, 2, 3, 4, 5].map((star) => (
-                    <Star key={star} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+                    <Star key={star} className="h-5 w-5 fill-pink-400 text-pink-400" />
                   ))}
                 </div>
                 <span className="text-sm font-medium">4.9/5 (2,341 reviews)</span>
@@ -72,7 +72,7 @@ const Hero = () => {
             <div className="bg-white rounded-lg shadow-2xl p-8 transform rotate-3">
               <div className="space-y-4">
                 <div className="h-4 bg-custom-mint rounded w-3/4"></div>
-                <div className="h-4 bg-custom-orange rounded w-1/2"></div>
+                <div className="h-4  rounded w-1/2"></div>
                 <div className="h-4 bg-custom-pink-light rounded w-2/3"></div>
                 <div className="space-y-2 pt-4">
                   <div className="h-8 bg-gray-100 rounded"></div>

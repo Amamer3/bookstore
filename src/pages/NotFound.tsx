@@ -6,7 +6,7 @@ import { Home, ArrowLeft, Search, Heart } from 'lucide-react';
 
 const NotFound = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-custom-mint via-custom-orange to-custom-pink-light flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-custom-mint via-gray-100 to-custom-pink-light flex items-center justify-center p-4">
       <Card className="w-full max-w-md">
         <CardContent className="p-8 text-center space-y-6">
           {/* Icon */}

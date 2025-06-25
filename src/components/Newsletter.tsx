@@ -29,8 +29,8 @@ const Newsletter = () => {
   };
 
   return (
-    <section className="py-16 bg-gradient-to-br from-custom-mint via-custom-orange to-custom-pink-light">
-      <div className="container mx-auto px-4">
+    <section className="py-16 bg-gradient-to-br from-custom-mint via-gray-100 to-custom-pink-light">
+      <div className="container mx-auto px-4 bg-white">
         <div className="max-w-4xl mx-auto">
           <Card className="shadow-2xl">
             <CardContent className="p-8 md:p-12">

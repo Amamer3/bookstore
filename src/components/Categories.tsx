@@ -56,7 +56,7 @@ const Categories = () => {
       title: 'Morning Routines',
       description: 'Start your day right with structured morning routine guides',
       icon: Coffee,
-      color: 'bg-yellow-100',
+      color: 'bg-pink-100',
       itemCount: 6,
       startingPrice: 18
     },
@@ -72,7 +72,7 @@ const Categories = () => {
   ];
 
   return (
-    <section className="py-16 bg-background">
+    <section className="py-16 bg-gradient-to-br from-custom-mint via-gray-50 to-custom-pink-light">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="font-serif text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -87,7 +87,7 @@ const Categories = () => {
           {categories.map((category) => {
             const IconComponent = category.icon;
             return (
-              <Card key={category.id} className="hover:shadow-lg transition-shadow group">
+              <Card key={category.id} className="hover:shadow-lg transition-shadow group bg-white">
                 <CardHeader>
                   <div className="flex items-center justify-between mb-4">
                     <div className={`w-12 h-12 ${category.color} rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform`}>
@@ -118,7 +118,7 @@ const Categories = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Button size="lg" variant="outline">
+          <Button size="lg" variant="default">
             View All Categories
             <ArrowRight className="ml-2 h-4 w-4" />
           </Button>

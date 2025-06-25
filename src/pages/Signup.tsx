@@ -61,15 +61,15 @@ const Signup = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-custom-mint via-custom-orange to-custom-pink-light flex items-center justify-center p-4">
-      <Card className="w-full max-w-md">
+    <div className="min-h-screen bg-gradient-to-br from-custom-mint via-gray-100 to-custom-pink-light flex items-center justify-center p-4">
+      <Card className="w-full max-w-md bg-slate-50 shadow-lg">
         <CardHeader className="text-center">
           <CardTitle className="text-2xl font-serif text-foreground">Join Our Community</CardTitle>
           <CardDescription>Create your account to start shopping</CardDescription>
         </CardHeader>
         
         <form onSubmit={handleSubmit}>
-          <CardContent className="space-y-4">
+          <CardContent className="space-y-4 ">
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label htmlFor="firstName">First Name</Label>
@@ -149,7 +149,7 @@ const Signup = () => {
                   placeholder="Confirm your password"
                   value={formData.confirmPassword}
                   onChange={(e) => handleInputChange('confirmPassword', e.target.value)}
-                  className="pl-10 pr-10"
+                  className="pl-10 pr-10 bg-slate-50 border-white"
                   required
                 />
                 <Button
@@ -172,7 +172,7 @@ const Signup = () => {
               />
               <Label htmlFor="terms" className="text-sm">
                 I agree to the{' '}
-                <Link to="/terms" className="text-primary hover:underline">
+                <Link to="/terms" className="text-blue hover:underline">
                   Terms & Conditions
                 </Link>
               </Label>
@@ -182,7 +182,7 @@ const Signup = () => {
           <CardFooter className="flex flex-col space-y-4">
             <Button 
               type="submit" 
-              className="w-full bg-primary hover:bg-primary/90"
+              className="w-full bg-black hover:bg-primary/90"
               disabled={isLoading}
             >
               {isLoading ? "Creating account..." : "Create Account"}

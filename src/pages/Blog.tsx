@@ -6,6 +6,8 @@ import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Calendar, Clock, Search, User } from 'lucide-react';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 interface BlogPost {
   id: string;
@@ -21,6 +23,7 @@ interface BlogPost {
 
 const Blog = () => {
   const [searchTerm, setSearchTerm] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   
   const blogPosts: BlogPost[] = [
     {
@@ -71,16 +74,22 @@ const Blog = () => {
 
   const categories = [...new Set(blogPosts.map(post => post.category))];
   
-  const filteredPosts = blogPosts.filter(post =>
-    post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    post.category.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filteredPosts = blogPosts.filter(post => {
+    const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      post.category.toLowerCase().includes(searchTerm.toLowerCase());
+    
+    const matchesCategory = selectedCategory ? post.category === selectedCategory : true;
+    
+    return matchesSearch && matchesCategory;
+  });
 
   return (
-    <div className="min-h-screen bg-background">
+    <>
+      <Header />
+      <div className="min-h-screen bg-white">
       {/* Header */}
-      <section className="bg-gradient-to-br from-custom-mint via-custom-orange to-custom-pink-light py-16">
+      <section className="bg-gradient-to-br from-custom-mint via-gray-100 to-custom-pink-light py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-4">
@@ -104,25 +113,33 @@ const Blog = () => {
         </div>
       </section>
 
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto px-4 py-16 ">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           {/* Sidebar */}
-          <div className="lg:col-span-1">
-            <Card>
+          <div className="lg:col-span-1 ">
+            <Card className="bg-slate-100">
               <CardHeader>
-                <CardTitle className="text-lg">Categories</CardTitle>
+                <CardTitle className="text-lg font-bold">Categories</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-2">
-                {categories.map(category => (
-                  <Button
-                    key={category}
-                    variant="ghost"
-                    className="w-full justify-start"
-                  >
-                    {category}
-                  </Button>
-                ))}
-              </CardContent>
+              <CardContent className="space-y-2 bg-slate-100 text-black">
+                 <Button
+                   variant={selectedCategory === null ? "default" : "ghost"}
+                   className="w-full justify-start"
+                   onClick={() => setSelectedCategory(null)}
+                 >
+                   All Categories
+                 </Button>
+                 {categories.map(category => (
+                   <Button
+                     key={category}
+                     variant={selectedCategory === category ? "default" : "ghost"}
+                     className="w-full justify-start"
+                     onClick={() => setSelectedCategory(category)}
+                   >
+                     {category}
+                   </Button>
+                 ))}
+               </CardContent>
             </Card>
           </div>
 
@@ -130,7 +147,7 @@ const Blog = () => {
           <div className="lg:col-span-3">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {filteredPosts.map(post => (
-                <Card key={post.id} className="hover:shadow-lg transition-shadow">
+                <Card key={post.id} className="hover:shadow-lg transition-shadow bg-white ">
                   <div className="aspect-video bg-custom-mint rounded-t-lg"></div>
                   <CardHeader>
                     <div className="flex items-center justify-between mb-2">
@@ -148,7 +165,7 @@ const Blog = () => {
                     <CardDescription>{post.excerpt}</CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <div className="flex items-center justify-between text-sm text-muted-foreground">
+                    <div className="flex items-center justify-between text-sm text-muted-foreground ">
                       <div className="flex items-center">
                         <User className="h-4 w-4 mr-1" />
                         {post.author}
@@ -165,7 +182,9 @@ const Blog = () => {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+      <Footer />
+    </>
   );
 };
 
