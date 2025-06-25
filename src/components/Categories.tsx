@@ -29,7 +29,7 @@ const Categories = () => {
       title: 'Kids Activities',
       description: 'Engaging printable activities to keep your little ones busy',
       icon: BookOpen,
-      color: 'bg-custom-orange',
+      color: 'bg-gray-100',
       itemCount: 25,
       startingPrice: 15
     },

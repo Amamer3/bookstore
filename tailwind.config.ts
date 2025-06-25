@@ -59,7 +59,7 @@ export default {
 				},
 				'custom-pink': '#FB3AA2',
 				'custom-pink-light': '#FCE7F3',
-				'custom-orange': '#F3F4F6',
+				'custom-orange': '#F9FAFB',
 				'custom-white': '#FFFFFF',
 				'custom-olive': '#938539',
 				'custom-mint': '#CCFBF1',
